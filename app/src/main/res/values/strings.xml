@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">testinternet</string>
+    <string name="first_fragment">Список каналов</string>
+    <string name="add_author">Добавить автора</string>
+    <string name="channel_notification_all">Уведомления об обновлениях</string>
+</resources>
