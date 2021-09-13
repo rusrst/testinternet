@@ -9,4 +9,5 @@ import com.example.testinternet.data.AuthorItem
 @TypeConverters(AuthorDatabaseConverter::class)
 abstract class AuthorDatabase: RoomDatabase() {
     abstract fun authorDAO(): AuthorDAO
+
 }

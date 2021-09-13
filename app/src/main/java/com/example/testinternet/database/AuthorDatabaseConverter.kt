@@ -1,50 +1,29 @@
-package com.example.hhapitest
+package com.example.testinternet.database
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.example.hhapitest.utils.Event
-import com.example.hhapitest.utils.ResourceActions
-import com.example.hhapitest.views.Navigator
-import com.example.hhapitest.views.UIActions
-import com.example.hhapitest.views.base.BaseScreen
-import com.example.hhapitest.views.base.LiveEvent
-import com.example.hhapitest.views.base.MutableLiveEvent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import androidx.room.TypeConverter
+import java.io.ByteArrayOutputStream
 
 
-const val ARG_SCREEN = "ARG_SCREEN"
-
-
-class MainViewModel(application: Application): AndroidViewModel(application), UIActions, Navigator {
-    val whenActivityActive = ResourceActions<MainActivity>()
-
-
-    private val _result = MutableLiveEvent<Any>()
-    val result: LiveEvent<Any> = _result
-
-    override fun launch(screen: BaseScreen) = whenActivityActive{
-        launchFragment(it, screen)
+class AuthorDatabaseConverter (){
+    @TypeConverter
+    fun toBitmap(bytes: ByteArray): Bitmap {
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
     }
 
-    override fun goBack(result: Any?) = whenActivityActive{
-        if (result != null){
-            _result.value = Event(result)
-        }
-        it.onBackPressed()
+    @TypeConverter
+    fun fromBitmap(bitmap: Bitmap): ByteArray{
+        val outputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+        return outputStream.toByteArray()
     }
-
-    override fun toast(message: String) {
-        TODO("Not yet implemented")
+    fun fromBoolean(boolean: Boolean): Int{
+        if (boolean) return 1
+        return 0
     }
-
-    override fun getString(messageRes: Int, vararg args: Any): String {
-        TODO("Not yet implemented")
-    }
-    fun launchFragment(activity: MainActivity, screen: BaseScreen, addToBackStack: Boolean = true){
-        
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        whenActivityActive.clear()
+    fun toBoolean(data: Int): Boolean{
+        if (data == 1) return true
+        return false
     }
 }

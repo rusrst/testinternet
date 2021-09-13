@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/UNIX/AndroidStudioProjects/testinternet/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.36974358974358973" />
         <entry key="..\:/Users/UNIX/AndroidStudioProjects/testinternet/app/src/main/res/drawable/ic_baseline_cached_24.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/UNIX/AndroidStudioProjects/testinternet/app/src/main/res/drawable/ic_launcher_background.xml" value="0.36974358974358973" />
         <entry key="..\:/Users/UNIX/AndroidStudioProjects/testinternet/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/UNIX/AndroidStudioProjects/testinternet/app/src/main/res/layout/add_author.xml" value="0.34782608695652173" />
         <entry key="..\:/Users/UNIX/AndroidStudioProjects/testinternet/app/src/main/res/layout/author_dat.xml" value="0.34782608695652173" />
