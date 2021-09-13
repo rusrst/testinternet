@@ -5,6 +5,7 @@ import androidx.annotation.StringRes
 
 interface HasCustomAction {
     fun getCustomAction(): CustomAction
+
 }
 
 class CustomAction(

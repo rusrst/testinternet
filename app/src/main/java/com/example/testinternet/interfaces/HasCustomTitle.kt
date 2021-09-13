@@ -1,5 +1,5 @@
 package com.example.testinternet.interfaces
 
 interface HasCustomTitle {
-    fun getTitle()
+    fun getTitle(): String
 }

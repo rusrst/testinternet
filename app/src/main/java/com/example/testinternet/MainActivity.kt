@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity(), ZenAuthorList.Callbacks {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ZenRepository.initializade(this.applicationContext)
         Notification().createChannel(CHANNEL_ID, getString(R.string.channel_notification_all), this)
         setContentView(R.layout.activity_main)
         toolbar = findViewById(R.id.toolbar)
