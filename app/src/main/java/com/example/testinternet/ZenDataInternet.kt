@@ -56,7 +56,7 @@ class ZenDataInternet () {
         return responseLiveData
     }
     fun GetZenAuthorList (url: String): MutableLiveData<AuthorItem>{
-        var AuthorItem: MutableLiveData<AuthorItem> = MutableLiveData()
+        val AuthorItem: MutableLiveData<AuthorItem> = MutableLiveData()
         val data: Call<String> = zenAPI.getZenContents(url)
         data.enqueue(object: Callback<String> {
             override fun onResponse(call: Call<String>, response: Response<String>) {
