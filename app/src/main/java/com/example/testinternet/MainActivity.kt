@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), ZenAuthorList.Callbacks {
                     .commit()
         }
         supportFragmentManager.registerFragmentLifecycleCallbacks(fragmentListener, false)// нужно чтобы понимать какой фрагмент на экране
-        if (isWorkSchedule("myWork")) {
+        if (!isWorkSchedule("myWork")) {
             Log.d("TAG", "ЗАДАЧА СОЗДАНА")
            val constraints = Constraints.Builder()
                .setRequiredNetworkType(NetworkType.CONNECTED)

@@ -3,16 +3,13 @@ package com.example.testinternet.recyclerview
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.drawable.BitmapDrawable
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,9 +20,7 @@ import com.example.testinternet.data.AuthorItem
 import com.example.testinternet.interfaces.CustomAction
 import com.example.testinternet.interfaces.HasCustomAction
 import com.example.testinternet.interfaces.HasCustomTitle
-import kotlinx.coroutines.flow.callbackFlow
 import java.util.*
-import kotlin.math.log
 
 class ZenAuthorList: Fragment(), View.OnClickListener, HasCustomTitle, HasCustomAction {
     private var adapter : ZenAuthorAdapter? = ZenAuthorAdapter(emptyList())
@@ -74,12 +69,14 @@ class ZenAuthorList: Fragment(), View.OnClickListener, HasCustomTitle, HasCustom
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button = view.findViewById<Button>(R.id.button)
-        button.setOnClickListener(this)
+        //val button = view.findViewById<Button>(R.id.button)
+        /*button.setOnClickListener(this)
         zenViewModel.authorListLiveData.observe(viewLifecycleOwner,
             {
                 updateUI(it)
             })
+
+         */
     }
 
 
