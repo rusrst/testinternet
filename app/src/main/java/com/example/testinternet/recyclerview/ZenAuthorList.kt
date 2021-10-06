@@ -90,6 +90,9 @@ class ZenAuthorList: Fragment(), View.OnClickListener, HasCustomTitle, HasCustom
         recyclerView = view.findViewById(R.id.zenAuthorRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = adapter
+        zenViewModel.authorListLiveData.observe(viewLifecycleOwner, {
+            updateUI(it)
+        })
         return view
     }
 
